@@ -86,6 +86,11 @@ type constants struct {
 	BounceWebhooksEnabled bool
 	BounceSESEnabled      bool
 	BounceSendgridEnabled bool
+
+	Metrics struct {
+		ExportProcessMetrics bool `koanf:"metrics.export_process_metrics"`
+		ExportHttpMetrics    bool `koanf:"metrics.export_http_metrics"`
+	}
 }
 
 type notifTpls struct {
@@ -364,6 +369,10 @@ func initConstants() *constants {
 	c.BounceWebhooksEnabled = ko.Bool("bounce.webhooks_enabled")
 	c.BounceSESEnabled = ko.Bool("bounce.ses_enabled")
 	c.BounceSendgridEnabled = ko.Bool("bounce.sendgrid_enabled")
+
+	c.Metrics.ExportProcessMetrics = ko.Bool("metrics.export_process_metrics")
+	c.Metrics.ExportHttpMetrics = ko.Bool("metrics.export_http_metrics")
+
 	return &c
 }
 

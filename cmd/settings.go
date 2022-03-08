@@ -111,6 +111,9 @@ type settings struct {
 	AdminCustomJS   string `json:"appearance.admin.custom_js"`
 	PublicCustomCSS string `json:"appearance.public.custom_css"`
 	PublicCustomJS  string `json:"appearance.public.custom_js"`
+
+	MetricsExportGoMetrics   bool `json:"metrics.export_http_metrics"`
+	MetricsExportHttpMetrics bool `json:"metrics.export_process_metrics"`
 }
 
 var (
